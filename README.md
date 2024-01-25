@@ -1,2 +1,2 @@
 # Discord ChatGPT Integration
- Discord Chat GPT Integration
+Discord Chat GPT Integration
