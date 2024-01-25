@@ -4,7 +4,7 @@ Discord bot named "bob" that integrates with the OpenAI API, allowing the use of
 ## Usage
 Type "bob-help" to view all available commands.
 
-## Installation and Setup
+## Installation
 1. Create two environment variables for your API Tokens:
     ```
     DISCORD_TOKEN=***
@@ -29,4 +29,29 @@ Type "bob-help" to view all available commands.
     npm run start
     ```
 
-5. **License**: This project is licensed under **All Rights Reserved**. No part of this project may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
+## Installation with Docker
+1. Setup your API Tokens inside the .env-example file and rename it to .env
+    ```
+    DISCORD_TOKEN=<Your Discord Bot Token>
+    OPENAI_API_KEY=<Your OpenAI Token>
+    ```
+
+2. Adjust the settings inside the `config.json` file to your preferences. Modify `bobPersonality` to customize the behavior of the "bob" command, and set daily limits for GPT-3, GPT-4, and DALL-E:
+    ```json
+    {
+      "bobPersonality" : "Du bist Bob der Baumeister...",
+      "dailyLimits": {
+        "gpt3": 50,
+        "gpt4": 10,
+        "dallE": 4
+      } 
+    }
+    ```
+
+3. Start the bot with
+    ```
+    docker compose --env-file ./.env up 
+    ```
+
+## **License**
+This project is licensed under **All Rights Reserved**. No part of this project may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
